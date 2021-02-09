@@ -38,7 +38,7 @@ router.post('/projects', (req, res, next) => {
 });
 
 // Get project
-router.post('/projects/:id', (req, res, next) => {
+router.get('/projects/:id', (req, res, next) => {
 
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
