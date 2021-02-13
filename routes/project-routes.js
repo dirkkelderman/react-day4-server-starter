@@ -22,11 +22,12 @@ router.get('/projects', (req, res, next) => {
 // Create new project
 router.post('/projects', (req, res, next) => {
 
-  const { title, description } = req.body;
+  const { title, description, imageUrl } = req.body;
 
   Project.create({
     title,
     description,
+    imageUrl,
     tasks: [],
     owner: req.user._id
   })
